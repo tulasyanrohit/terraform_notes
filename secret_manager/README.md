@@ -46,3 +46,37 @@ resource "aws_db_instance" "example" {
   skip_final_snapshot = true
 }
 ```
+
+
+Complete code can be found in file main.tf
+
+Note:
+AWS authentication is not disscused in this example but is prerequisite to this example
+
+Some methods:
+WAY 1:
+Credentials can be provided by adding an access_key, secret_key, and optionally token, to the AWS provider block. Hard-coded credentials are not recommended.
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+}
+
+WAY 2:
+Use environment variables.
+
+export AWS_ACCESS_KEY_ID="my-access-key"
+export AWS_SECRET_ACCESS_KEY="my-secret-key"
+export AWS_REGION="us-east-1"
+
+unsetting ENV variable
+
+unset AWS_ACCESS_KEY_ID
+unset AWS_SECRET_ACCESS_KEY
+
+
+
+WAY 3:
+
+Terraform will automatically use credentials if it is set during "aws configure".
+If you have the AWS Command Line Interface (CLI) installed, you can run aws configure and enter the access key ID, secret access key, and default region. 
