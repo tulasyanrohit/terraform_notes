@@ -22,3 +22,8 @@ Keep rest everthing as default
 
 Step 02:
 Add code to reference the secret created as part of Step 01
+```terraform
+data aws_secretsmanager_secret_version credentials {
+    secret_id = "some-secret-name"
+}
+```
