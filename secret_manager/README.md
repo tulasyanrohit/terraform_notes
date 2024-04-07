@@ -19,3 +19,6 @@ Give a name to your secret [Note this name will used in terraform to connect to 
 
 Step 01-D:
 Keep rest everthing as default
+
+Step 02:
+Add code to reference the secret created as part of Step 01
